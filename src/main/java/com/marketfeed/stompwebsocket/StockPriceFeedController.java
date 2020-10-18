@@ -2,6 +2,7 @@ package com.marketfeed.stompwebsocket;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 
 @EnableScheduling
 @Controller
+@RefreshScope
 public class StockPriceFeedController {
 
 	private final static Map<String, BigDecimal> sym2Price = new HashMap<>();

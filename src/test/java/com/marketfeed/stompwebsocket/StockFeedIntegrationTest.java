@@ -87,7 +87,7 @@ public class StockFeedIntegrationTest {
 			}
 		};
 
-		this.stompClient.connect("ws://localhost:{port}/ws", this.headers, handler, this.port);
+		this.stompClient.connect("ws://localhost:{port}/ws/", this.headers, handler, this.port);
 		if (latch.await(60, TimeUnit.SECONDS)) {
 			if (failure.get() != null) {
 				throw new AssertionError("", failure.get());
